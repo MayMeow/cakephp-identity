@@ -26,8 +26,7 @@ class UsersTableTest extends TestCase
      */
     protected $fixtures = [
         'plugin.CakephpIdentity.Users',
-        'plugin.CakephpIdentity.Articles',
-        'plugin.CakephpIdentity.IdentityRoles',
+        'plugin.CakephpIdentity.Roles',
     ];
 
     /**
