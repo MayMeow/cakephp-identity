@@ -74,3 +74,10 @@ this will create following database tables.
 | identity_permissions | Storing permissions information |
 | identity_permission_roles | Binding permissions to roles |
 | identity_roles_users | Binding users to roles, one user can have multiple roles |
+
+## How to use
+
+Permissions are using action strings to verify permissions. Action string looks like this
+`Plugin:/prefix/Controller/Action` or `__:/prefix/Controller/Action` when plugin is not available;
+
+You can get action string via
