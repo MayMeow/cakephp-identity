@@ -11,7 +11,7 @@ class ActionFactory
      *
      * Returns string definition of action which is using by Identity plugin to identity
      * whether user has permission or not to given action
-     * 
+     *
      * @param ServerRequest $request
      * @return string
      */

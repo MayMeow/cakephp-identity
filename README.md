@@ -80,4 +80,4 @@ this will create following database tables.
 Permissions are using action strings to verify permissions. Action string looks like this
 `Plugin:/prefix/Controller/Action` or `__:/prefix/Controller/Action` when plugin is not available;
 
-You can get action string via
+You can get action string via `CakephpIdentity\Factories\ActionFactory::getActionString($this->request)` from any controller;
