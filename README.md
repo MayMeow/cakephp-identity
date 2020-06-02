@@ -2,6 +2,54 @@
 
 Manage roles and permissions for CakePHP.
 
+## Requirements
+
+* CakePHP 4.*
+* PHP >= 7.3
+* Database (Mysql/MariaDB/Postgres)
+* Existing Users table where are stored users data used for authentication.
+
+If you do not have users table you can create new migration and update `change()` function to look like this
+
+```php
+/**
+     * Change Method.
+     *
+     * More information on this method is available here:
+     * https://book.cakephp.org/phinx/0/en/migrations.html#the-change-method
+     * @return void
+     */
+    public function change()
+    {
+        $table = $this->table('users');
+        $table->addColumn('email', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+        ]);
+        $table->addColumn('password', 'string', [
+            'default' => null,
+            'limit' => 255,
+            'null' => false,
+        ]);
+        $table->addColumn('created', 'datetime', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->addColumn('modified', 'datetime', [
+            'default' => null,
+            'null' => false,
+        ]);
+        $table->create();
+    }
+```
+
+or use `cake`
+
+```bash
+php bin/cake.php bake migration CreateUsers email:string password:string created modified
+```
+
 ## Installation
 
 You can install this plugin into your CakePHP application using [composer](https://getcomposer.org).
