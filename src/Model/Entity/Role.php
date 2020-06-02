@@ -4,6 +4,7 @@ declare(strict_types=1);
 namespace CakephpIdentity\Model\Entity;
 
 use Cake\ORM\Entity;
+use Cake\Utility\Text;
 
 /**
  * Role Entity
@@ -32,4 +33,21 @@ class Role extends Entity
         'sid' => true,
         'users' => true,
     ];
+
+
+    public function initializeSid()
+    {
+        $this->sid = Text::uuid();
+    }
+
+    /**
+     * Generate SID
+     * @param string $sid
+     * @return string
+     */
+    /*protected function _setSid(string $sid = null) : string
+    {
+        dd('test');
+        return Text::uuid();
+    }*/
 }

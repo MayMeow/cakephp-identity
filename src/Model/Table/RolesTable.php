@@ -76,8 +76,7 @@ class RolesTable extends Table
 
         $validator
             ->uuid('sid')
-            ->requirePresence('sid', 'create')
-            ->notEmptyString('sid');
+            ->allowEmptyString('sid');
 
         return $validator;
     }
